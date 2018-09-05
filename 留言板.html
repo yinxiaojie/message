@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    section{
+        width: 500px;
+        height: 100%;
+        border: 1px solid #808080;
+        margin: 30px auto;
+        background: #cccccc;
+    }
+    .show{
+        width: 100%;
+        min-height: 100px;
+        border: 1px solid #333;
+        margin-top: 30px;
+        padding: 0 1px;
+        box-sizing: border-box;
+    }
+    textarea{
+        margin-top: 150px;
+        resize:none;
+        outline:none;
+    }
+    button{
+        margin-top:30px;
+    }
+</style>
+<body>
+<section>
+    <div class="show"></div>
+    <textarea name="" id="" cols="68" rows="10"></textarea>
+    <button>提交</button>
+</section>
+</body>
+</html>
+<script>
+    let show=document.querySelector(".show");
+    let textarea=document.querySelector("textarea");
+    let button=document.querySelector("button");
+    button.onclick=function () {
+        let div=document.createElement("div");
+        let txt=document.createTextNode("text");
+        div.style=`border-bottom:1px solid red;color:blue`;
+        txt.nodeValue=textarea.value;
+        div.appendChild(txt);
+        show.appendChild(div);
+    }
+</script>
